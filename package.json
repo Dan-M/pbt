@@ -2,13 +2,13 @@
   "name": "pbt",
   "version": "1.0.0",
   "author": "Dan Maffiew <dmaffiew@gmail.com>",
+  "license": "MIT",
   "scripts": {
+    "clean": "rm -rf lib/",
     "lint": "tsc --noEmit && eslint .",
-    "build": "yarn lint && yarn test && yarn clean && yarn build:typescript && yarn postbuild",
-    "build:lcov": "yarn lint && yarn test:lcov && yarn clean && yarn build:typescript",
-    "build:typescript": "tsc --build tsconfig.build.json && yarn postbuild",
-    "test": "jest --runInBand --silent",
-    "test:lcov": "jest --runInBand --silent --coverage --coverageReporters lcov --coverageDirectory ../coverage"
+    "build:typescript": "tsc --build tsconfig.build.json",
+    "build": "yarn clean && yarn lint && yarn test && yarn build:typescript",
+    "test": "jest --silent"
   },
   "devDependencies": {
     "@types/jest": "^27.4.0",

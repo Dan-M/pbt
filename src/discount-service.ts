@@ -1,7 +1,6 @@
-import { Cart, Product } from './schema';
+import { Cart } from './schema';
 
 export const minOrderAmount = 50.0;
-
 
 const cartPrice = (cart: Cart): number => {
   return cart.items.reduce((acc, item) => {

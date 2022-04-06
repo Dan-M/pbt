@@ -1,4 +1,3 @@
-import * as z from 'zod';
 import * as fc from 'fast-check';
 import { ZodFastCheck } from 'zod-fast-check';
 import { Cart, cartSchema } from './schema';
@@ -27,7 +26,7 @@ describe('Discount service properties', () => {
   test('Cart with one item price > minOrderAmount gets discount', () =>
     fc.assert(
       fc.property(cartArbitrary, (cart) => {
-        console.log(`Cart to be tested: ${JSON.stringify(cart)}`);
+        // console.log(`Cart to be tested: ${JSON.stringify(cart)}`);
         const provideDiscount = hasDiscount(cart);
         expect(oneItemProvidesDiscount(cart)).toEqual(provideDiscount);
       }),
